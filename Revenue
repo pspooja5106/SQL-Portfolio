@@ -1,0 +1,6 @@
+-- Revenue by Date
+SELECT SUM(ROUND(amount)) AS total_revenue,
+DATE (rental_date)
+FROM payment
+INNER JOIN rental ON rental.rental_id = payment.rental_id
+GROUP BY DATE (rental_date);
